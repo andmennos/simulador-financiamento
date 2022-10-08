@@ -26,26 +26,26 @@
             <div
               class="text-danger"
               *ngIf="
-                recursosFormulario.get('nome')!['invalid'] &&
-                recursosFormulario.get('nome')!['touched']
+                recursosFormulario.get('nome')?.invalid &&
+                recursosFormulario.get('nome')?.touched
               "
             >
               <div
-                *ngIf="(recursosFormulario.get('nome')?.errors)!['required']"
+                *ngIf="(recursosFormulario.get('nome')?.errors)?.['required']"
                 class="erro"
                 role="alert"
               >
                 Dado Obrigatório
               </div>
               <div
-                *ngIf="(recursosFormulario.get('nome')?.errors)!['minlength']"
+                *ngIf="(recursosFormulario.get('nome')?.errors)?.['minlength']"
                 class="erro"
                 role="alert"
               >
                 Deve ter no mínimo 3 caracteres
               </div>
               <div
-                *ngIf="(recursosFormulario.get('nome')?.errors)!['pattern']"
+                *ngIf="(recursosFormulario.get('nome')?.errors)?.['pattern']"
                 class="erro"
                 role="alert"
               >
@@ -71,13 +71,13 @@
             <div
               class="text-danger"
               *ngIf="
-                recursosFormulario.get('profissao')!['invalid'] &&
-                recursosFormulario.get('profissao')!['touched']
+                recursosFormulario.get('profissao')?.invalid &&
+                recursosFormulario.get('profissao')?.touched
               "
             >
               <div
                 *ngIf="
-                  (recursosFormulario.get('profissao')?.errors)!['required']
+                  (recursosFormulario.get('profissao')?.errors)?.['required']
                 "
                 class="erro"
                 role="alert"
@@ -86,7 +86,7 @@
               </div>
               <div
                 *ngIf="
-                  (recursosFormulario.get('profissao')?.errors)!['minlength']
+                  (recursosFormulario.get('profissao')?.errors)?.['minlength']
                 "
                 class="erro"
                 role="alert"
@@ -95,7 +95,7 @@
               </div>
               <div
                 *ngIf="
-                  (recursosFormulario.get('profissao')?.errors)!['pattern']
+                  (recursosFormulario.get('profissao')?.errors)?.['pattern']
                 "
                 class="erro"
                 role="alert"
@@ -123,19 +123,19 @@
             <div
               class="text-danger"
               *ngIf="
-                recursosFormulario.get('cpf')!['invalid'] &&
-                recursosFormulario.get('cpf')!['touched']
+                recursosFormulario.get('cpf')?.invalid &&
+                recursosFormulario.get('cpf')?.touched
               "
             >
               <div
-                *ngIf="(recursosFormulario.get('cpf')?.errors)!['required']"
+                *ngIf="(recursosFormulario.get('cpf')?.errors)?.['required']"
                 class="erro"
                 role="alert"
               >
                 Dado Obrigatório
               </div>
               <div
-                *ngIf="(recursosFormulario.get('cpf')?.errors)!['minlength']"
+                *ngIf="(recursosFormulario.get('cpf')?.errors)?.['minlength']"
                 class="erro"
                 role="alert"
               >
@@ -162,19 +162,19 @@
             <div
               class="text-danger"
               *ngIf="
-                recursosFormulario.get('email')!['invalid'] &&
-                recursosFormulario.get('email')!['touched']
+                recursosFormulario.get('email')?.invalid &&
+                recursosFormulario.get('email')?.touched
               "
             >
               <div
-                *ngIf="(recursosFormulario.get('email')?.errors)!['required']"
+                *ngIf="(recursosFormulario.get('email')?.errors)?.['required']"
                 class="erro"
                 role="alert"
               >
                 Dado Obrigatório
               </div>
               <div
-                *ngIf="(recursosFormulario.get('email')?.errors)!['email']"
+                *ngIf="(recursosFormulario.get('email')?.errors)?.['email']"
                 class="erro"
                 role="alert"
               >
@@ -201,12 +201,12 @@
             <div
               class="text-danger"
               *ngIf="
-                recursosFormulario.get('data')!['invalid'] &&
-                recursosFormulario.get('data')!['touched']
+                recursosFormulario.get('data')?.invalid &&
+                recursosFormulario.get('data')?.touched
               "
             >
               <div
-                *ngIf="(recursosFormulario.get('data')?.errors)!['required']"
+                *ngIf="(recursosFormulario.get('data')?.errors)?.['required']"
                 class="erro"
                 role="alert"
               >
@@ -214,14 +214,14 @@
               </div>
               <div
                 class="text-danger"
-                *ngIf="(recursosFormulario.get('data')?.errors)!['menorIdade']"
+                *ngIf="(recursosFormulario.get('data')?.errors)?.['menorIdade']"
                 class="erro"
                 role="alert"
               >
                 Você precisa ter mais de 18 anos para realizar o cadastro
               </div>
               <div
-                *ngIf="(recursosFormulario.get('data')?.errors)!['minlength']"
+                *ngIf="(recursosFormulario.get('data')?.errors)?.['minlength']"
                 class="erro"
                 role="alert"
               >
@@ -248,19 +248,19 @@
             <div
               class="text-danger"
               *ngIf="
-                recursosFormulario.get('cep')!['invalid'] &&
-                recursosFormulario.get('cep')!['touched']
+                recursosFormulario.get('cep')?.invalid &&
+                recursosFormulario.get('cep')?.touched
               "
             >
               <div
-                *ngIf="(recursosFormulario.get('cep')?.errors)!['required']"
+                *ngIf="(recursosFormulario.get('cep')?.errors)?.['required']"
                 class="erro"
                 role="alert"
               >
                 Dado Obrigatório
               </div>
               <div
-                *ngIf="(recursosFormulario.get('cep')?.errors)!['minlength']"
+                *ngIf="(recursosFormulario.get('cep')?.errors)?.['minlength']"
                 class="erro"
                 role="alert"
               >
@@ -287,19 +287,19 @@
             <div
               class="text-danger"
               *ngIf="
-                recursosFormulario.get('cel')!['touched'] &&
-                recursosFormulario.get('cel')!['invalid']
+                recursosFormulario.get('cel')?.touched &&
+                recursosFormulario.get('cel')?.invalid
               "
             >
               <div
-                *ngIf="(recursosFormulario.get('cel')?.errors)!['required']"
+                *ngIf="(recursosFormulario.get('cel')?.errors)?.['required']"
                 class="erro"
                 role="alert"
               >
                 Dado Obrigatório
               </div>
               <div
-                *ngIf="(recursosFormulario.get('cel')?.errors)!['minlength']"
+                *ngIf="(recursosFormulario.get('cel')?.errors)?.['minlength']"
                 class="erro"
                 role="alert"
               >

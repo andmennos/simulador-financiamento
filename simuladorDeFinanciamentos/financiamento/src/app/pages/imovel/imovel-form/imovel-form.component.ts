@@ -64,13 +64,13 @@ export class ImovelFormComponent
   }
 
   public validaSimulacao() {
-    const imovel: Imovel = new Imovel(
+    const imovel: Imovel = new Imovel(); /*
       this.recursosFormulario?.get('tipo')?.value,
       this.recursosFormulario?.get('renda')?.value,
       this.recursosFormulario?.get('valorImovel')?.value,
       this.recursosFormulario?.get('valorEntrada')?.value,
       this.recursosFormulario?.get('parcelas')?.value
-    );
+      */
     const percentualMinimo = 30;
     const taxaAnoNaoCorrentista = 0.08;
     // Validação Renda Mínimma
@@ -95,17 +95,18 @@ export class ImovelFormComponent
     if (resultado <= rendaMinima) {
       this.aprovacao = true;
       return (this.enviarFormulario = this.botaoSalvar());
+    } else {
+      this.aprovacao = false;
+      return (this.enviarFormulario = this.botaoSalvar());
     }
-    if (resultado > rendaMinima) this.aprovacao = false;
-    return (this.enviarFormulario = this.botaoSalvar());
   }
 
   public botaoSalvar() {
-    if (this.aprovacao == true) {
+    if (this.aprovacao) {
       return this.rotaParaAprovacaoAprovada();
+    } else {
+      return this.rotaParaAprovacaoReprovada();
     }
-    if (this.aprovacao == false) return this.rotaParaAprovacaoReprovada();
-    return '';
   }
 
   public rotaParaAprovacaoReprovada() {
