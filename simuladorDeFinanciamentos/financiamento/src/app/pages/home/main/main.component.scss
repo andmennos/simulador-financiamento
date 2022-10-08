@@ -1,0 +1,19 @@
+#imagem-fundo {
+  width:20rem;
+}
+
+.fundo-transparente {
+  opacity: 0.4;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.sr-only {
+  position:absolute;
+  left: -10000px;
+  width: 0.1px;
+  height: 0.1px;
+  overflow: hidden;
+}
