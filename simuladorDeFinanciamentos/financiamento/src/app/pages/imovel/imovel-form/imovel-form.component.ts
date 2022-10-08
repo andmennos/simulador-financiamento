@@ -19,11 +19,11 @@ export class ImovelFormComponent
   enviarFormulario: any;
 
   imaskRenda = {
-    mask: '00000,00',
+    mask: '0000000',
   };
 
   imaskImovel = {
-    mask: '0000000,00',
+    mask: '0000000',
   };
 
   imaskParcela = {
@@ -63,19 +63,20 @@ export class ImovelFormComponent
     return 'Dados do Imóvel';
   }
 
-  public validaSimulacao() {
-    const imovel: Imovel = new Imovel(); /*
+  validaSimulacao() {
+    const imovel: Imovel = new Imovel(
       this.recursosFormulario?.get('tipo')?.value,
       this.recursosFormulario?.get('renda')?.value,
       this.recursosFormulario?.get('valorImovel')?.value,
       this.recursosFormulario?.get('valorEntrada')?.value,
       this.recursosFormulario?.get('parcelas')?.value
-      */
+    );
+
     const percentualMinimo = 30;
     const taxaAnoNaoCorrentista = 0.08;
     // Validação Renda Mínimma
     const valorTotalAprovado =
-      Number(imovel.valorImovel!) - Number(imovel.valorEntrada!);
+      Number(imovel.valorImovel) - Number(imovel.valorEntrada);
     const comJuros =
       valorTotalAprovado * taxaAnoNaoCorrentista + valorTotalAprovado!;
     const resultado = comJuros / Number(imovel.parcelas!);
@@ -103,17 +104,19 @@ export class ImovelFormComponent
 
   public botaoSalvar() {
     if (this.aprovacao) {
+      console.log(this.aprovacao, 'true');
       return this.rotaParaAprovacaoAprovada();
     } else {
+      console.log(this.aprovacao, 'false');
       return this.rotaParaAprovacaoReprovada();
     }
   }
 
-  public rotaParaAprovacaoReprovada() {
-    return this.router.navigate(['/reprovado']);
-  }
-
   public rotaParaAprovacaoAprovada() {
     return this.router.navigate(['/aprovado']);
+  }
+
+  public rotaParaAprovacaoReprovada() {
+    return this.router.navigate(['/reprovado']);
   }
 }
