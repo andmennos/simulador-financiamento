@@ -1,33 +1,43 @@
 <div autoFocus class="row mb-4">
-  <h2  class="h2 border-left mx-3">
-    {{tituloPagina}}
+  <h2 class="h2 border-left mx-3">
+    {{ tituloPagina }}
   </h2>
 </div>
 
 <form class="row g-3" [formGroup]="recursosFormulario">
   <div class="card">
-
     <div class="card-body">
       <div class="form-body">
         <div class="row g-3">
-
           <!-- tipo -->
           <div class="form-group col-md-4">
-            <label aria-label="Preencha" for="tipo" class="form-label">Preencha com o tipo do imóvel</label>
+            <label aria-label="Preencha" for="tipo" class="form-label"
+              >Preencha com o tipo do imóvel</label
+            >
             <select
               name="tipo"
               class="form-control"
               id="tipo"
               formControlName="tipo"
-              aria-required="true">
+              aria-required="true"
+            >
               <option value="" [selected]="true">Tipo do imóvel...</option>
               <option selected value="Residencial">Residêncial</option>
               <option value="Comercial">Comercial</option>
             </select>
 
-            <div class="text-danger" *ngIf="recursosFormulario.get('tipo')!['invalid']
-            && recursosFormulario.get('tipo')!['touched']">
-              <div *ngIf="recursosFormulario.get('tipo')?.errors!['required']" class="erro" role="alert">
+            <div
+              class="text-danger"
+              *ngIf="
+                recursosFormulario.get('tipo')!['invalid'] &&
+                recursosFormulario.get('tipo')!['touched']
+              "
+            >
+              <div
+                *ngIf="(recursosFormulario.get('tipo')?.errors)!['required']"
+                class="erro"
+                role="alert"
+              >
                 Dado Obrigatório
               </div>
             </div>
@@ -35,7 +45,9 @@
 
           <!-- renda -->
           <div class="form-group col-md-4">
-            <label aria-label="Preencha" for="renda" class="form-label">Preencha com sua renda mensal</label>
+            <label aria-label="Preencha" for="renda" class="form-label"
+              >Preencha com sua renda mensal</label
+            >
             <input
               [imask]="imaskRenda"
               type="text"
@@ -43,31 +55,56 @@
               id="renda"
               formControlName="renda"
               placeholder="Renda Mensal"
-              aria-required="true">
+              aria-required="true"
+            />
 
-            <div class="text-danger" *ngIf="recursosFormulario.get('renda')!['invalid']
-            && recursosFormulario.get('renda')!['touched']">
-              <div *ngIf="recursosFormulario.get('renda')?.errors!['required']" class="erro" role="alert">
+            <div
+              class="text-danger"
+              *ngIf="
+                recursosFormulario.get('renda')!['invalid'] &&
+                recursosFormulario.get('renda')!['touched']
+              "
+            >
+              <div
+                *ngIf="(recursosFormulario.get('renda')?.errors)!['required']"
+                class="erro"
+                role="alert"
+              >
                 Dado Obrigatório
               </div>
             </div>
           </div>
 
-            <!-- valorImovel -->
+          <!-- valorImovel -->
           <div class="form-group col-md-4">
-            <label aria-label="Preencha" for="valorImovel" class="form-label">Preencha com o valor do imóvel</label>
-            <input tabidex="0"
+            <label aria-label="Preencha" for="valorImovel" class="form-label"
+              >Preencha com o valor do imóvel</label
+            >
+            <input
+              tabidex="0"
               [imask]="imaskImovel"
               type="text"
               class="form-control"
               id="valorImovel"
               formControlName="valorImovel"
               placeholder="Valor do Imóvel"
-              aria-required="true">
+              aria-required="true"
+            />
 
-            <div class="text-danger" *ngIf="recursosFormulario.get('valorImovel')!['invalid']
-            && recursosFormulario.get('valorImovel')!['touched']">
-              <div *ngIf="recursosFormulario.get('valorImovel')?.errors!['required']" class="erro" role="alert">
+            <div
+              class="text-danger"
+              *ngIf="
+                recursosFormulario.get('valorImovel')!['invalid'] &&
+                recursosFormulario.get('valorImovel')!['touched']
+              "
+            >
+              <div
+                *ngIf="
+                  (recursosFormulario.get('valorImovel')?.errors)!['required']
+                "
+                class="erro"
+                role="alert"
+              >
                 Dado Obrigatório
               </div>
             </div>
@@ -83,52 +120,105 @@
               id="valorEntrada"
               formControlName="valorEntrada"
               placeholder="Valor da Entrada"
-              aria-required="true">
+              aria-required="true"
+            />
 
-            <div class="text-danger" *ngIf="recursosFormulario.get('valorEntrada')!['invalid']
-            && recursosFormulario.get('valorEntrada')!['touched']">
-              <div *ngIf="recursosFormulario.get('valorEntrada')?.errors!['required']" class="erro" role="alert">
+            <div
+              class="text-danger"
+              *ngIf="
+                recursosFormulario.get('valorEntrada')!['invalid'] &&
+                recursosFormulario.get('valorEntrada')!['touched']
+              "
+            >
+              <div
+                *ngIf="
+                  (recursosFormulario.get('valorEntrada')?.errors)!['required']
+                "
+                class="erro"
+                role="alert"
+              >
                 Dado Obrigatório
               </div>
-              <div *ngIf="recursosFormulario.get('valorEntrada')?.errors!['entradaInsuficiente']" class="erro" role="alert">
-                O valor da entrada deve ser igual ou maior que 20% do valor do imóvel
+              <div
+                *ngIf="
+                  (recursosFormulario.get('valorEntrada')?.errors)![
+                    'entradaInsuficiente'
+                  ]
+                "
+                class="erro"
+                role="alert"
+              >
+                O valor da entrada deve ser igual ou maior que 20% do valor do
+                imóvel
               </div>
             </div>
           </div>
 
           <!-- parcela -->
           <div class="form-group col-md-4">
-            <label aria-label="Preencha" for="parcelas" class="form-label">Em quantas parcelas deseja parcelar?</label>
+            <label aria-label="Preencha" for="parcelas" class="form-label"
+              >Em quantas parcelas deseja parcelar?</label
+            >
             <input
-              [imask] = "imaskParcela"
+              [imask]="imaskParcela"
               type="text"
               class="form-control"
               id="parcelas"
               formControlName="parcelas"
               placeholder="Quantidade de parcelas"
-              aria-required="true">
+              aria-required="true"
+            />
 
-            <div CLASS="text-danger" *ngIf="recursosFormulario.get('parcelas')!['invalid']
-            && recursosFormulario.get('parcelas')!['touched']">
-              <div *ngIf="recursosFormulario.get('parcelas')?.errors!['required']" class="erro" role="alert">
+            <div
+              CLASS="text-danger"
+              *ngIf="
+                recursosFormulario.get('parcelas')!['invalid'] &&
+                recursosFormulario.get('parcelas')!['touched']
+              "
+            >
+              <div
+                *ngIf="
+                  (recursosFormulario.get('parcelas')?.errors)!['required']
+                "
+                class="erro"
+                role="alert"
+              >
                 Dado Obrigatório
               </div>
-              <div class="text-danger"*ngIf="recursosFormulario.get('parcelas')?.errors!['parcelaMaxima']" class="erro" role="alert">
+              <div
+                class="text-danger"
+                *ngIf="
+                  (recursosFormulario.get('parcelas')?.errors)!['parcelaMaxima']
+                "
+                class="erro"
+                role="alert"
+              >
                 O número máximo de parcelas é de 360
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>
 
     <div class="d-flex justify-content-between">
-      <button type="button" class="btn btn-secondary btn-lg float-right mt-3" routerLink="dados-do-proponente" aria-label="Voltar">
-          Voltar
+      <button
+        type="button"
+        class="btn btn-secondary btn-lg float-right mt-3"
+        routerLink="dados-do-proponente"
+        aria-label="Voltar"
+      >
+        Voltar
       </button>
 
-      <button [disabled]="recursosFormulario['invalid']" type="submit" class="btn btn-primary btn-lg float-right mt-3" (click)="validaSimulacao()"  routerLink="{{rota}}" aria-label="Simular">
+      <button
+        [disabled]="recursosFormulario['invalid']"
+        type="submit"
+        class="btn btn-primary btn-lg float-right mt-3"
+        (click)="validaSimulacao()"
+        routerLink="{{ rota }}"
+        aria-label="Simular"
+      >
         Simular
       </button>
     </div>

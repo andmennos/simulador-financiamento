@@ -6,8 +6,8 @@ export class Proponente {
     public email?: string,
     public data?: string,
     public cep?: string,
-    public cel?: string,
-  ){
+    public cel?: string
+  ) {
     this.name = name;
     this.profissao = profissao;
     this.cpf = cpf;
@@ -15,6 +15,5 @@ export class Proponente {
     this.data = data;
     this.cep = cep;
     this.cel = cel;
-    }
-
+  }
 }

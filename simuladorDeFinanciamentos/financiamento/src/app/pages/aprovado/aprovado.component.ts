@@ -8,10 +8,12 @@ import { ImovelStorageService } from '../imovel/shared/imovel-storage.service';
 @Component({
   selector: 'app-aprovado',
   templateUrl: './aprovado.component.html',
-  styleUrls: ['./aprovado.component.scss']
+  styleUrls: ['./aprovado.component.scss'],
 })
-export class AprovadoComponent extends RecursosBasicosService implements OnInit {
-
+export class AprovadoComponent
+  extends RecursosBasicosService
+  implements OnInit
+{
   imovel: Imovel;
   parcelaInicial: number;
   valorTotalAprovado: number;
@@ -21,9 +23,9 @@ export class AprovadoComponent extends RecursosBasicosService implements OnInit 
     location: Location,
     router: Router,
     public imovelStorageService: ImovelStorageService
-    ) {
-    super(injector, location, router)
-   }
+  ) {
+    super(injector, location, router);
+  }
 
   ngOnInit(): void {
     this.geraTitulo(this.imprimeTitulo());
@@ -32,8 +34,7 @@ export class AprovadoComponent extends RecursosBasicosService implements OnInit 
     this.valorTotalAprovado = this.imovel.valorTotalAprovado!;
   }
 
-  imprimeTitulo():string {
-    return 'Aprovado'
+  imprimeTitulo(): string {
+    return 'Aprovado';
   }
-
 }

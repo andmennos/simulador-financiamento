@@ -17,25 +17,21 @@ xdescribe(AprovadoComponent.name, () => {
   let routerSpy: jasmine.SpyObj<Router>;
   let imovelStorageServiceSpy: jasmine.SpyObj<ImovelStorageService>;
   const imovel: Imovel = {
-    tipo:"",
-    renda:"",
-    valorImovel:"",
-    valorEntrada:"",
-    parcelas:"",
-    valorTotalAprovado:0,
-    parcelaInicial:0,
-  }
+    tipo: '',
+    renda: '',
+    valorImovel: '',
+    valorEntrada: '',
+    parcelas: '',
+    valorTotalAprovado: 0,
+    parcelaInicial: 0,
+  };
 
   beforeEach(() => {
-
-    locationSpy = jasmine.createSpyObj<Location>(
-      "Location",
-      ["path"]
-    );
-    routerSpy = jasmine.createSpyObj<Router>("Router", ["routerState"]);
+    locationSpy = jasmine.createSpyObj<Location>('Location', ['path']);
+    routerSpy = jasmine.createSpyObj<Router>('Router', ['routerState']);
     imovelStorageServiceSpy = jasmine.createSpyObj<ImovelStorageService>(
-      "ImovelStorageService",
-      ["getImovel"]
+      'ImovelStorageService',
+      ['getImovel']
     );
 
     TestBed.configureTestingModule({
@@ -48,8 +44,8 @@ xdescribe(AprovadoComponent.name, () => {
         { provide: Location, useValue: locationSpy },
         { provide: Router, useValue: routerSpy },
         { provide: ImovelStorageService, useValue: imovelStorageServiceSpy },
-        { provide: Imovel, useValue: imovel }
-      ]
+        { provide: Imovel, useValue: imovel },
+      ],
     });
     fixture = TestBed.createComponent(AprovadoComponent);
     component = fixture.componentInstance;
@@ -60,9 +56,8 @@ xdescribe(AprovadoComponent.name, () => {
   });
 
   it('makes expected calls', () => {
-    const imovelStorageServiceSpy: ImovelStorageService = fixture.debugElement.injector.get(
-      ImovelStorageService
-    );
+    const imovelStorageServiceSpy: ImovelStorageService =
+      fixture.debugElement.injector.get(ImovelStorageService);
     spyOn(component, 'imprimeTitulo').and.callThrough();
     spyOn(imovelStorageServiceSpy, 'getImovel').and.callThrough();
     fixture.detectChanges();
@@ -72,8 +67,7 @@ xdescribe(AprovadoComponent.name, () => {
 
   it(`#${AprovadoComponent.prototype.imprimeTitulo.name}
       Should trigger imprimeTitulo() when called`, () => {
-        component.imprimeTitulo();
-        expect(component.imprimeTitulo).toHaveBeenCalled();
-      }
-  )
+    component.imprimeTitulo();
+    expect(component.imprimeTitulo).toHaveBeenCalled();
+  });
 });

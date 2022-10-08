@@ -1,29 +1,24 @@
-import { AbstractControl } from "@angular/forms";
+import { AbstractControl } from '@angular/forms';
 
 export class ImovelValidacoes {
-
-  static maximoParcelas(control: AbstractControl){
-
+  static maximoParcelas(control: AbstractControl) {
     const parcelas = control.value;
 
-    if (parcelas <= 360)
-      return null
+    if (parcelas <= 360) return null;
 
-    return { parcelaMaxima: true}
+    return { parcelaMaxima: true };
   }
 
-  static valorEntradaMinima(control: AbstractControl){
+  static valorEntradaMinima(control: AbstractControl) {
     const percentualMinimo = 20;
     const valorImovelCliente = control.parent?.get('valorImovel')?.value;
     const valorEntradaCliente = control.parent?.get('valorEntrada')?.value;
-    const entradaMinima = valorImovelCliente / 100 * percentualMinimo;
+    const entradaMinima = (valorImovelCliente / 100) * percentualMinimo;
 
-    if(valorEntradaCliente < entradaMinima)
-      return { entradaInsuficiente: true}
-    else{
+    if (valorEntradaCliente < entradaMinima)
+      return { entradaInsuficiente: true };
+    else {
       return null;
     }
-
   }
-
 }

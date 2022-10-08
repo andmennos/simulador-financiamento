@@ -13,22 +13,20 @@ describe('MainComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MainComponent ],
+      declarations: [MainComponent],
       providers: [
         //MainComponent,
         { provide: Injector, useValue: injectorSpy },
         { provide: Location, useValue: locationSpy },
-        { provide: Router, useValue: routerSpy }
-      ]
-    })
-    .compileComponents();
+        { provide: Router, useValue: routerSpy },
+      ],
+    }).compileComponents();
   });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(MainComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-
   });
 
   it('should create', () => {

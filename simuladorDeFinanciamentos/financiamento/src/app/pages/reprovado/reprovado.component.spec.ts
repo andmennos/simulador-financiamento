@@ -12,19 +12,17 @@ describe(ReprovadoComponent.name, () => {
   let routerSpy: jasmine.SpyObj<Router>;
 
   beforeEach(async () => {
-
-    locationSpy = jasmine.createSpyObj<Location>("Location", ["path"]);
+    locationSpy = jasmine.createSpyObj<Location>('Location', ['path']);
 
     await TestBed.configureTestingModule({
-      declarations: [ ReprovadoComponent ],
+      declarations: [ReprovadoComponent],
       providers: [
         ReprovadoComponent,
         { provide: Injector, useValue: injectorSpy },
         { provide: Location, useValue: locationSpy },
-        { provide: Router, useValue: routerSpy }
-      ]
-    })
-    .compileComponents();
+        { provide: Router, useValue: routerSpy },
+      ],
+    }).compileComponents();
   });
 
   beforeEach(() => {

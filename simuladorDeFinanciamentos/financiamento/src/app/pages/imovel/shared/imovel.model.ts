@@ -5,9 +5,9 @@ export class Imovel {
     public valorImovel?: string,
     public valorEntrada?: string,
     public parcelas?: string,
-    public valorTotalAprovado?:number,
-    public parcelaInicial?:number
-  ){
+    public valorTotalAprovado?: number,
+    public parcelaInicial?: number
+  ) {
     this.tipo = tipo;
     this.renda = renda;
     this.valorImovel = valorImovel;
@@ -15,5 +15,5 @@ export class Imovel {
     this.parcelas = parcelas;
     this.valorTotalAprovado = valorTotalAprovado;
     this.parcelaInicial = parcelaInicial;
-    }
+  }
 }

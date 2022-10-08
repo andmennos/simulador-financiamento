@@ -7,8 +7,7 @@ import { Calendar, CalendarModule } from 'primeng/calendar';
 import { IMaskModule } from 'angular-imask';
 
 @NgModule({
-  declarations: [
-  ],
+  declarations: [],
   imports: [
     CommonModule,
     HttpClientModule,
@@ -25,11 +24,9 @@ import { IMaskModule } from 'angular-imask';
     ReactiveFormsModule,
     RouterModule,
     Calendar,
-    IMaskModule
+    IMaskModule,
 
     //COMPONENTES COMPARTILHADOS
-
-
-  ]
+  ],
 })
-export class SharedModule { }
+export class SharedModule {}

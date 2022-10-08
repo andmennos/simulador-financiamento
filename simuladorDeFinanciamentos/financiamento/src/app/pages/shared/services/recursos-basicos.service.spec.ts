@@ -10,27 +10,26 @@ describe(RecursosBasicosService.name, () => {
   let locationSpy: jasmine.SpyObj<Location>;
   let routerSpy: jasmine.SpyObj<Router>;
   beforeEach(() => {
-
-    locationSpy = jasmine.createSpyObj<Location>("Location", ["path"]);
+    locationSpy = jasmine.createSpyObj<Location>('Location', ['path']);
     TestBed.configureTestingModule({
       providers: [
         RecursosBasicosService,
         { provide: Injector, useValue: injectorSpy },
         { provide: Location, useValue: locationSpy },
-        { provide: Router, useValue: routerSpy }
-      ]
-    })
+        { provide: Router, useValue: routerSpy },
+      ],
+    });
     service = TestBed.inject(RecursosBasicosService);
   });
 
-  it("can load instance", () => {
+  it('can load instance', () => {
     expect(service).toBeTruthy();
   });
 
   it(`#${RecursosBasicosService.prototype.geraTitulo.name}
     Should geraTitulo() is running`, () => {
-    const implementacaoPagina:string = "";
-    service.tituloPagina = "tituloHome";
+    const implementacaoPagina: string = '';
+    service.tituloPagina = 'tituloHome';
     service.geraTitulo(implementacaoPagina);
 
     expect(service.geraTitulo).toBeTruthy();

@@ -1,42 +1,38 @@
 <div autoFocus class="row mb-1">
-  <h2  class="h2 border-left mx-3">
-    {{tituloPagina}}
+  <h2 class="h2 border-left mx-3">
+    {{ tituloPagina }}
   </h2>
 </div>
 <div class="resultado card text-center border-light mb-3">
-  <p class="card-title fs-2">
-    Proposta Nº 000001
-  </p>
-  <small aria-hidden="true" class="imagem-aprovado"><img src="https://ik.imagekit.io/3mfjmziiqmi/aprovado_j0G77ovoDbw.png?ik-sdk-version=javascript-1.4.3&updatedAt=1643054561777"></small>
+  <p class="card-title fs-2">Proposta Nº 000001</p>
+  <small aria-hidden="true" class="imagem-aprovado"
+    ><img
+      src="https://ik.imagekit.io/3mfjmziiqmi/aprovado_j0G77ovoDbw.png?ik-sdk-version=javascript-1.4.3&updatedAt=1643054561777"
+  /></small>
   <p aria-hidden="true" class="card-text text-success">STATUS: APROVADO</p>
   <p class="sr-only">STATUS APROVADO</p>
 </div>
 
 <div class="card text-center">
   <div class="card-body">
-
     <ul class="list-group list-group-horizontal-xxl">
+      <li class="lista mt-2">- Taxa de 8% ao ano para correntistas</li>
+      <li class="lista mt-2">- Taxa de 10% ao ano para não correntistas</li>
       <li class="lista mt-2">
-        - Taxa de 8% ao ano para correntistas
+        - Parcela inicial {{ parcelaInicial | currency: "BRL" }}
       </li>
       <li class="lista mt-2">
-        - Taxa de 10% ao ano para não correntistas
+        - Valor total aprovado: {{ valorTotalAprovado | currency: "BRL" }}
       </li>
-      <li class="lista mt-2">
-        - Parcela inicial {{ parcelaInicial | currency: 'BRL' }}
-      </li>
-      <li class="lista mt-2">
-        - Valor total aprovado: {{ valorTotalAprovado | currency: 'BRL' }}
-      </li>
-      <li class="lista mt-2">
-        - Seguro Só Vamu Security.
-      </li>
-      <li class="lista mt-2">
-        - Desconto na primeira e na última parcela
-      </li>
+      <li class="lista mt-2">- Seguro Só Vamu Security.</li>
+      <li class="lista mt-2">- Desconto na primeira e na última parcela</li>
     </ul>
 
-    <a routerLink="" class="btn btn-primary mt-2" aria-label="IR PARA TELA INICIAL">
+    <a
+      routerLink=""
+      class="btn btn-primary mt-2"
+      aria-label="IR PARA TELA INICIAL"
+    >
       IR PARA TELA INICIAL
     </a>
   </div>

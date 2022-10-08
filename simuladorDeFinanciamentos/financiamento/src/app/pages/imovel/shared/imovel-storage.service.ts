@@ -1,22 +1,19 @@
-import { Injectable } from "@angular/core";
-import { Imovel }from './imovel.model'
+import { Injectable } from '@angular/core';
+import { Imovel } from './imovel.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
-
 export class ImovelStorageService {
-
   imovel: Imovel;
 
-  constructor(){}
+  constructor() {}
 
-  setImovel(imovel:Imovel){
+  setImovel(imovel: Imovel) {
     this.imovel = imovel;
   }
 
-  getImovel(){
-    return this.imovel
+  getImovel() {
+    return this.imovel;
   }
-
 }

@@ -6,21 +6,14 @@ import { SharedModule } from '../pages/shared/shared.module';
 
 import { NavbarComponent } from './components/navbar/navbar.component';
 
-
 @NgModule({
-  declarations: [
-    NavbarComponent
-  ],
+  declarations: [NavbarComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    SharedModule
+    SharedModule,
   ],
-  exports:[
-    NavbarComponent,
-    SharedModule
-  ]
-
+  exports: [NavbarComponent, SharedModule],
 })
-export class CoreModule { }
+export class CoreModule {}

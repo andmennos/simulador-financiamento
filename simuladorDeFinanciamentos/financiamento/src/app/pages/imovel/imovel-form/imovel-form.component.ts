@@ -104,8 +104,7 @@ export class ImovelFormComponent
     if (this.aprovacao == true) {
       return this.rotaParaAprovacaoAprovada();
     }
-    if (this.aprovacao == false)
-      return this.rotaParaAprovacaoReprovada();
+    if (this.aprovacao == false) return this.rotaParaAprovacaoReprovada();
     return '';
   }
 

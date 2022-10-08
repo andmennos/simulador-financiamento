@@ -16,36 +16,25 @@ describe(ProponenteFormComponent.name, () => {
   let injectorSpy: jasmine.SpyObj<Injector>;
   let locationSpy: jasmine.SpyObj<Location>;
   let routerSpy: jasmine.SpyObj<Router>;
-  let proponente: jasmine.SpyObjPropertyNames<Proponente>
-  const proponenteSpy = jasmine.createSpyObj(
-    "ProponenteService",
-    ["model"]
-  );
+  let proponente: jasmine.SpyObjPropertyNames<Proponente>;
+  const proponenteSpy = jasmine.createSpyObj('ProponenteService', ['model']);
 
   beforeEach(() => {
-
-    locationSpy = jasmine.createSpyObj<Location>(
-      "Location",
-      ["path"]
-    );
-    routerSpy = jasmine.createSpyObj<Router>("Router", ["routerState"]);
+    locationSpy = jasmine.createSpyObj<Location>('Location', ['path']);
+    routerSpy = jasmine.createSpyObj<Router>('Router', ['routerState']);
 
     TestBed.configureTestingModule({
       schemas: [NO_ERRORS_SCHEMA],
       declarations: [ProponenteFormComponent],
-      imports: [
-        RouterTestingModule,
-        FormsModule,
-        ReactiveFormsModule
-      ],
+      imports: [RouterTestingModule, FormsModule, ReactiveFormsModule],
       providers: [
         RecursosBasicosService,
         { provide: Injector, useValue: injectorSpy },
         { provide: Location, useValue: locationSpy },
         { provide: Router, useValue: routerSpy },
         { provide: ProponenteService, useValue: proponenteSpy },
-        { provide: Proponente, useValue: proponente}
-      ]
+        { provide: Proponente, useValue: proponente },
+      ],
     });
     fixture = TestBed.createComponent(ProponenteFormComponent);
     component = fixture.componentInstance;
@@ -61,25 +50,22 @@ describe(ProponenteFormComponent.name, () => {
 
   it(`#${ProponenteFormComponent.prototype.botaoSalvar.name}
     makes expected calls`, () => {
-      const locationStub: Location = fixture.debugElement.injector.get(
-        Location
-      );
+    const locationStub: Location = fixture.debugElement.injector.get(Location);
 
     spyOn(component, 'botaoSalvar').and.callThrough();
     component.botaoSalvar();
-    component.rota = "";
+    component.rota = '';
     fixture.detectChanges();
-    component.rota = "";
+    component.rota = '';
     expect(locationStub.path).toHaveBeenCalled();
   });
 
   it(`#${ProponenteFormComponent.prototype.criaRotaImovel.name}
     Should create rotaImovel`, () => {
-      spyOn(component, 'criaRotaImovel').and.callThrough();
-      component.criaRotaImovel();
-      component.rota = "";
-      fixture.detectChanges();
-      expect(component.criaRotaImovel).toBeTruthy();
-  })
-
+    spyOn(component, 'criaRotaImovel').and.callThrough();
+    component.criaRotaImovel();
+    component.rota = '';
+    fixture.detectChanges();
+    expect(component.criaRotaImovel).toBeTruthy();
+  });
 });

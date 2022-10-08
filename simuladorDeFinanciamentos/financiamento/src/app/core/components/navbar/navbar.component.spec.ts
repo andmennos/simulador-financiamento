@@ -11,7 +11,7 @@ describe('NavbarComponent', () => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule],
       schemas: [NO_ERRORS_SCHEMA],
-      declarations: [NavbarComponent]
+      declarations: [NavbarComponent],
     });
     fixture = TestBed.createComponent(NavbarComponent);
     component = fixture.componentInstance;

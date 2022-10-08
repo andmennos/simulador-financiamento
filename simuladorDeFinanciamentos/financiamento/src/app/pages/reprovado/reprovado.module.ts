@@ -4,14 +4,8 @@ import { SharedModule } from 'primeng/api';
 import { ReprovadoRoutingModule } from './reprovado-routing.module';
 import { ReprovadoComponent } from './reprovado.component';
 
-
 @NgModule({
-  declarations: [
-    ReprovadoComponent
-  ],
-  imports: [
-    SharedModule,
-    ReprovadoRoutingModule
-  ]
+  declarations: [ReprovadoComponent],
+  imports: [SharedModule, ReprovadoRoutingModule],
 })
-export class ReprovadoModule { }
+export class ReprovadoModule {}

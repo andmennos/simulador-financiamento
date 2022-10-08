@@ -10,7 +10,6 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { Imovel } from './../shared/imovel.model';
 import { ImovelFormComponent } from './imovel-form.component';
 
-
 describe('ImovelFormComponent', () => {
   let component: ImovelFormComponent;
   let fixture: ComponentFixture<ImovelFormComponent>;
@@ -19,43 +18,38 @@ describe('ImovelFormComponent', () => {
   let routerSpy: jasmine.SpyObj<Router>;
   let imovelStorageServiceSpy: jasmine.SpyObj<ImovelStorageService>;
   const imovel: Imovel = {
-    tipo:"",
-    renda:"",
-    valorImovel:"",
-    valorEntrada:"",
-    parcelas:"",
-    valorTotalAprovado:0,
-    parcelaInicial:0
-  }
+    tipo: '',
+    renda: '',
+    valorImovel: '',
+    valorEntrada: '',
+    parcelas: '',
+    valorTotalAprovado: 0,
+    parcelaInicial: 0,
+  };
 
   beforeEach(() => {
-
-    locationSpy = jasmine.createSpyObj<Location>(
-      "Location",
-      ["path"]
-    );
-    routerSpy = jasmine.createSpyObj<Router>("Router", ["routerState", "navigate"]);
+    locationSpy = jasmine.createSpyObj<Location>('Location', ['path']);
+    routerSpy = jasmine.createSpyObj<Router>('Router', [
+      'routerState',
+      'navigate',
+    ]);
     imovelStorageServiceSpy = jasmine.createSpyObj<ImovelStorageService>(
-      "ImovelStorageService",
-      ["setImovel"]
+      'ImovelStorageService',
+      ['setImovel']
     );
 
     TestBed.configureTestingModule({
       schemas: [NO_ERRORS_SCHEMA],
       declarations: [ImovelFormComponent],
-      imports: [
-        RouterTestingModule,
-        FormsModule,
-        ReactiveFormsModule,
-      ],
+      imports: [RouterTestingModule, FormsModule, ReactiveFormsModule],
       providers: [
         RecursosBasicosService,
         { provide: Injector, useValue: injectorSpy },
-        { provide: Location, useValue:  locationSpy },
+        { provide: Location, useValue: locationSpy },
         { provide: Router, useValue: routerSpy },
         { provide: ImovelStorageService, useValue: imovelStorageServiceSpy },
-        { provide: Imovel, useValue: imovel }
-      ]
+        { provide: Imovel, useValue: imovel },
+      ],
     });
     fixture = TestBed.createComponent(ImovelFormComponent);
     component = fixture.componentInstance;
@@ -73,10 +67,10 @@ describe('ImovelFormComponent', () => {
 
   it(`#${ImovelFormComponent.prototype.validaSimulacao.name}
       Should validate simulation`, () => {
-        spyOn(component, 'validaSimulacao').and.callThrough();
-        component.validaSimulacao();
-        expect(component.validaSimulacao).toHaveBeenCalled();
-      })
+    spyOn(component, 'validaSimulacao').and.callThrough();
+    component.validaSimulacao();
+    expect(component.validaSimulacao).toHaveBeenCalled();
+  });
 
   it('makes expected calls', () => {
     const routerSpy: Router = fixture.debugElement.injector.get(Router);

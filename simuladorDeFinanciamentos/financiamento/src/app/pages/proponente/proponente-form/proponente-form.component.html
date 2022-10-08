@@ -1,59 +1,105 @@
 <div autoFocus class="row mb-4">
-  <h2  class="h2 border-left mx-3">
-    {{tituloPagina}}
+  <h2 class="h2 border-left mx-3">
+    {{ tituloPagina }}
   </h2>
 </div>
 
 <form class="row g-3" [formGroup]="recursosFormulario">
   <div class="card">
-
     <div class="card-body">
       <div class="form-body">
         <div class="row g-3">
-
           <!-- nome -->
           <div class="form-group col-md-4">
-            <label aria-label="Preencha" for="nome" class="form-label">Preencha com seu nome completo</label>
+            <label aria-label="Preencha" for="nome" class="form-label"
+              >Preencha com seu nome completo</label
+            >
             <input
               type="text"
               class="form-control"
               id="nome"
               formControlName="nome"
               placeholder="Nome Completo"
-              aria-required="true">
+              aria-required="true"
+            />
 
-              <div class="text-danger" *ngIf="recursosFormulario.get('nome')!['invalid'] && recursosFormulario.get('nome')!['touched']">
-                <div *ngIf="recursosFormulario.get('nome')?.errors!['required']" class="erro" role="alert">
-                  Dado Obrigatório
-                </div>
-                <div *ngIf="recursosFormulario.get('nome')?.errors!['minlength']" class="erro" role="alert">
-                  Deve ter no mínimo 3 caracteres
-                </div>
-                <div *ngIf="recursosFormulario.get('nome')?.errors!['pattern']" class="erro" role="alert">
-                  Insira apenas letras
-                </div>
+            <div
+              class="text-danger"
+              *ngIf="
+                recursosFormulario.get('nome')!['invalid'] &&
+                recursosFormulario.get('nome')!['touched']
+              "
+            >
+              <div
+                *ngIf="(recursosFormulario.get('nome')?.errors)!['required']"
+                class="erro"
+                role="alert"
+              >
+                Dado Obrigatório
               </div>
+              <div
+                *ngIf="(recursosFormulario.get('nome')?.errors)!['minlength']"
+                class="erro"
+                role="alert"
+              >
+                Deve ter no mínimo 3 caracteres
+              </div>
+              <div
+                *ngIf="(recursosFormulario.get('nome')?.errors)!['pattern']"
+                class="erro"
+                role="alert"
+              >
+                Insira apenas letras
+              </div>
+            </div>
           </div>
 
           <!-- profissão -->
           <div class="form-group col-md-4">
-            <label aria-label="Preencha" for="profissao" class="form-label">Preencha com a sua profissão</label>
+            <label aria-label="Preencha" for="profissao" class="form-label"
+              >Preencha com a sua profissão</label
+            >
             <input
               type="text"
               class="form-control"
               id="profissao"
               formControlName="profissao"
               placeholder="Profissão"
-              aria-required="true">
+              aria-required="true"
+            />
 
-            <div class="text-danger" *ngIf="recursosFormulario.get('profissao')!['invalid'] && recursosFormulario.get('profissao')!['touched']">
-              <div *ngIf="recursosFormulario.get('profissao')?.errors!['required']" class="erro" role="alert">
+            <div
+              class="text-danger"
+              *ngIf="
+                recursosFormulario.get('profissao')!['invalid'] &&
+                recursosFormulario.get('profissao')!['touched']
+              "
+            >
+              <div
+                *ngIf="
+                  (recursosFormulario.get('profissao')?.errors)!['required']
+                "
+                class="erro"
+                role="alert"
+              >
                 Dado Obrigatório
               </div>
-              <div *ngIf="recursosFormulario.get('profissao')?.errors!['minlength']" class="erro" role="alert">
+              <div
+                *ngIf="
+                  (recursosFormulario.get('profissao')?.errors)!['minlength']
+                "
+                class="erro"
+                role="alert"
+              >
                 Deve possuir no mínimo 3 caracteres
               </div>
-              <div *ngIf="recursosFormulario.get('profissao')?.errors!['pattern']" class="erro" role="alert">
+              <div
+                *ngIf="
+                  (recursosFormulario.get('profissao')?.errors)!['pattern']
+                "
+                class="erro"
+                role="alert"
+              >
                 Por gentileza, insira apenas letras
               </div>
             </div>
@@ -61,7 +107,9 @@
 
           <!-- cpf -->
           <div class="form-group col-md-4">
-            <label aria-label="Preencha" for="cpf" class="form-label">Preencha com seu CPF</label>
+            <label aria-label="Preencha" for="cpf" class="form-label"
+              >Preencha com seu CPF</label
+            >
             <input
               [imask]="imaskCpf"
               type="text"
@@ -69,13 +117,28 @@
               id="cpf"
               formControlName="cpf"
               placeholder="CPF"
-              aria-required="true">
+              aria-required="true"
+            />
 
-            <div class="text-danger" *ngIf="recursosFormulario.get('cpf')!['invalid'] && recursosFormulario.get('cpf')!['touched']">
-              <div *ngIf="recursosFormulario.get('cpf')?.errors!['required']" class="erro" role="alert">
+            <div
+              class="text-danger"
+              *ngIf="
+                recursosFormulario.get('cpf')!['invalid'] &&
+                recursosFormulario.get('cpf')!['touched']
+              "
+            >
+              <div
+                *ngIf="(recursosFormulario.get('cpf')?.errors)!['required']"
+                class="erro"
+                role="alert"
+              >
                 Dado Obrigatório
               </div>
-              <div *ngIf="recursosFormulario.get('cpf')?.errors!['minlength']" class="erro" role="alert">
+              <div
+                *ngIf="(recursosFormulario.get('cpf')?.errors)!['minlength']"
+                class="erro"
+                role="alert"
+              >
                 Deve possuir no mínimo 11 caracteres
               </div>
             </div>
@@ -83,7 +146,9 @@
 
           <!-- email -->
           <div class="form-group col-md-4">
-            <label aria-label="Preencha" for="email" class="form-label">Preencha com um email válidol</label>
+            <label aria-label="Preencha" for="email" class="form-label"
+              >Preencha com um email válidol</label
+            >
             <input
               [imask]="imaskEmail"
               type="text"
@@ -91,22 +156,38 @@
               id="email"
               formControlName="email"
               placeholder="nome@email.com"
-              aria-required="true">
+              aria-required="true"
+            />
 
-              <div class="text-danger" *ngIf="recursosFormulario.get('email')!['invalid'] && recursosFormulario.get('email')!['touched']">
-                <div *ngIf="recursosFormulario.get('email')?.errors!['required']" class="erro" role="alert">
-                  Dado Obrigatório
-                </div>
-                <div *ngIf="recursosFormulario.get('email')?.errors!['email']" class="erro" role="alert">
-                  Deve ser informado um email válido!
-                </div>
+            <div
+              class="text-danger"
+              *ngIf="
+                recursosFormulario.get('email')!['invalid'] &&
+                recursosFormulario.get('email')!['touched']
+              "
+            >
+              <div
+                *ngIf="(recursosFormulario.get('email')?.errors)!['required']"
+                class="erro"
+                role="alert"
+              >
+                Dado Obrigatório
               </div>
-
+              <div
+                *ngIf="(recursosFormulario.get('email')?.errors)!['email']"
+                class="erro"
+                role="alert"
+              >
+                Deve ser informado um email válido!
+              </div>
+            </div>
           </div>
 
           <!-- data -->
           <div class="form-group col-md-4">
-            <label aria-label="Preencha" for="data" class="mb-2"> Preencha com sua data de nascimento</label>
+            <label aria-label="Preencha" for="data" class="mb-2">
+              Preencha com sua data de nascimento</label
+            >
             <input
               [imask]="imaskData"
               type="text"
@@ -114,16 +195,36 @@
               id="data"
               formControlName="data"
               placeholder="Data de Nascimento"
-              aria-required="true">
+              aria-required="true"
+            />
 
-            <div class="text-danger" *ngIf="recursosFormulario.get('data')!['invalid'] && recursosFormulario.get('data')!['touched']">
-              <div *ngIf="recursosFormulario.get('data')?.errors!['required']" class="erro" role="alert">
+            <div
+              class="text-danger"
+              *ngIf="
+                recursosFormulario.get('data')!['invalid'] &&
+                recursosFormulario.get('data')!['touched']
+              "
+            >
+              <div
+                *ngIf="(recursosFormulario.get('data')?.errors)!['required']"
+                class="erro"
+                role="alert"
+              >
                 É necessário informar sua data de nascimento
               </div>
-              <div class="text-danger"*ngIf="recursosFormulario.get('data')?.errors!['menorIdade']" class="erro" role="alert">
+              <div
+                class="text-danger"
+                *ngIf="(recursosFormulario.get('data')?.errors)!['menorIdade']"
+                class="erro"
+                role="alert"
+              >
                 Você precisa ter mais de 18 anos para realizar o cadastro
               </div>
-              <div *ngIf="recursosFormulario.get('data')?.errors!['minlength']" class="erro" role="alert">
+              <div
+                *ngIf="(recursosFormulario.get('data')?.errors)!['minlength']"
+                class="erro"
+                role="alert"
+              >
                 Deve inserir a data completa.
               </div>
             </div>
@@ -131,7 +232,9 @@
 
           <!-- cep -->
           <div class="form-group col-md-4">
-            <label aria-label="Preencha" for="cep" class="form-label">Preencha com seu CEP</label>
+            <label aria-label="Preencha" for="cep" class="form-label"
+              >Preencha com seu CEP</label
+            >
             <input
               [imask]="imaskCep"
               type="text"
@@ -139,13 +242,28 @@
               id="cep"
               formControlName="cep"
               placeholder="CEP"
-              aria-required="true">
+              aria-required="true"
+            />
 
-            <div class="text-danger" *ngIf="recursosFormulario.get('cep')!['invalid'] && recursosFormulario.get('cep')!['touched']">
-              <div *ngIf="recursosFormulario.get('cep')?.errors!['required']" class="erro" role="alert">
+            <div
+              class="text-danger"
+              *ngIf="
+                recursosFormulario.get('cep')!['invalid'] &&
+                recursosFormulario.get('cep')!['touched']
+              "
+            >
+              <div
+                *ngIf="(recursosFormulario.get('cep')?.errors)!['required']"
+                class="erro"
+                role="alert"
+              >
                 Dado Obrigatório
               </div>
-              <div *ngIf="recursosFormulario.get('cep')?.errors!['minlength']" class="erro" role="alert">
+              <div
+                *ngIf="(recursosFormulario.get('cep')?.errors)!['minlength']"
+                class="erro"
+                role="alert"
+              >
                 Deve possuir 8 digitos
               </div>
             </div>
@@ -153,7 +271,9 @@
 
           <!-- celular -->
           <div class="form-group col-md-4">
-            <label aria-label="Preencha" for="cel" class="form-label">Preencha com seu celular</label>
+            <label aria-label="Preencha" for="cel" class="form-label"
+              >Preencha com seu celular</label
+            >
             <input
               [imask]="imaskCel"
               type="text"
@@ -161,13 +281,28 @@
               id="cel"
               formControlName="cel"
               placeholder="Celular"
-              aria-required="true">
+              aria-required="true"
+            />
 
-            <div class="text-danger" *ngIf="recursosFormulario.get('cel')!['touched'] && recursosFormulario.get('cel')!['invalid']">
-              <div *ngIf="recursosFormulario.get('cel')?.errors!['required']" class="erro" role="alert">
+            <div
+              class="text-danger"
+              *ngIf="
+                recursosFormulario.get('cel')!['touched'] &&
+                recursosFormulario.get('cel')!['invalid']
+              "
+            >
+              <div
+                *ngIf="(recursosFormulario.get('cel')?.errors)!['required']"
+                class="erro"
+                role="alert"
+              >
                 Dado Obrigatório
               </div>
-              <div *ngIf="recursosFormulario.get('cel')?.errors!['minlength']" class="erro" role="alert">
+              <div
+                *ngIf="(recursosFormulario.get('cel')?.errors)!['minlength']"
+                class="erro"
+                role="alert"
+              >
                 Deve possuir 11 digitos
               </div>
             </div>
@@ -177,14 +312,25 @@
     </div>
 
     <div class="d-flex justify-content-between">
-      <button type="button" class="btn btn-secondary btn-lg float-right mt-3" routerLink="/" aria-label="Cancelar">
-          Cancelar
+      <button
+        type="button"
+        class="btn btn-secondary btn-lg float-right mt-3"
+        routerLink="/"
+        aria-label="Cancelar"
+      >
+        Cancelar
       </button>
 
-      <button [disabled]="recursosFormulario['invalid']" type="submit" class="btn btn-primary btn-lg float-right mt-3" (click)="enviaForm" routerLink = {{rota}} aria-label="Salvar">
+      <button
+        [disabled]="recursosFormulario['invalid']"
+        type="submit"
+        class="btn btn-primary btn-lg float-right mt-3"
+        (click)="(enviaForm)"
+        routerLink="{{ rota }}"
+        aria-label="Salvar"
+      >
         Salvar
-    </button>
+      </button>
     </div>
-
   </div>
 </form>
