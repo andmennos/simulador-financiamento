@@ -5,11 +5,11 @@
 ### Descrição do Projeto</h2>
 
 <p>Simulador de financiamento com regras de negócio e validações restritivas. 
-Coleta as informações do cliente e do imóvel, e verifica se o cliente foi aprovado ou reprovado de acordo com os dados fornecidos.</p>
+Coleta as informações do cliente, imóvel, e verifica se o cliente foi aprovado ou reprovado de acordo com os dados fornecidos.</p>
 
 #### Features: 
 - Carregamento Lazyloading; 
-- Componentes estruturados seguido as boas práticas; 
+- Componentes estruturados seguindo as boas práticas; 
 - Adaptado com acessibilidade; 
 - Aplicação de responsividade; 
 - Cobertura de testes unitários acima de 90%; 
